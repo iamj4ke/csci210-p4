@@ -40,13 +40,6 @@ void sendmsg (char *user, char *target, char *msg) {
 }
 
 void* messageListener(void *arg) {
-	// TODO:
-	// Read user's own FIFO in an infinite loop for incoming messages
-	// The logic is similar to a server listening to requests
-	// print the incoming message to the standard output in the
-	// following format
-	// Incoming message from [source]: [message]
-	// put an end of line at the end of the message
 
 	char userFIFO[50];
 	snprintf(userFIFO, sizeof(userFIFO), "%s", uName);
@@ -123,19 +116,6 @@ int main(int argc, char **argv) {
 	}
 
 	if (strcmp(cmd,"sendmsg")==0) {
-		// TODO: Create the target user and
-		// the message string and call the sendmsg function
-
-		// NOTE: The message itself can contain spaces
-		// If the user types: "sendmsg user1 hello there"
-		// target should be "user1" 
-		// and the message should be "hello there"
-
-		// if no argument is specified, you should print the following
-		// printf("sendmsg: you have to specify target user\n");
-		// if no message is specified, you should print the followingA
- 		// printf("sendmsg: you have to enter a message\n");
-
 
 		char* target = strtok(NULL, " ");
 		if (!target) {
